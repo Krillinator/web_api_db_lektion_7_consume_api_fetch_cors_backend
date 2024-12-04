@@ -2,8 +2,10 @@ package com.krillinator.lektion_7_consume_api_fetch_cors_backend.user.controller
 
 import com.krillinator.lektion_7_consume_api_fetch_cors_backend.user.model.CustomUser
 import com.krillinator.lektion_7_consume_api_fetch_cors_backend.user.repository.UserRepository
+import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
+import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -46,8 +48,11 @@ class UserController(
     }
 
     // localhost:8080/api/v1/user
+    // TODO - Annotations sometimes doesn't show up
     @PostMapping
-    fun postUser(@RequestBody customUser: CustomUser): ResponseEntity<String> {
+    fun postUser(
+        @Valid @RequestBody customUser: CustomUser,
+    ): ResponseEntity<String> {
 
         userRepository.save(customUser)
 
