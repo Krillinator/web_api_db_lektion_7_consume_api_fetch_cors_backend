@@ -32,7 +32,6 @@ class UserController(
     // TODO - localhost:8080/clothes/shirts?color=blue       - RequestParam
     // TODO - localhost:8080/user/{userName}/task/{taskName} - PathVariable
     // localhost:8080/api/v1/user/{id}
-    // TODO - TEST without /
     @GetMapping("/{id}")
     fun getUserByUserId(
         @PathVariable id: Long

@@ -1,4 +1,4 @@
-package com.krillinator.lektion_7_consume_api_fetch_cors_backend.user.controller
+package com.krillinator.lektion_7_consume_api_fetch_cors_backend.handlers
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
